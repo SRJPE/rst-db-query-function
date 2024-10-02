@@ -32,7 +32,6 @@ app.http('httpTrigger1', {
       cr.num_fish_caught, 
       cr.plus_count,
       pcm.definition as plus_count_methodology,
-      cr.release_id,
       mt.definition as mark_type,
       mc.definition as mark_color,
       bp.definition as mark_position
@@ -66,7 +65,7 @@ app.http('httpTrigger1', {
       t.total_revolutions, 
       t.rpm_at_start, 
       t.rpm_at_end, 
-      t.debris_volume_liters 
+      t.debris_volume_gal 
       FROM trap_visit t
       left join program p on (t.program_id = p.id)
       left join fish_processed fp on (t.fish_processed = fp.id)
